@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="card" style=" margin-top: 20px">
+    <div class="card-header">
+        <h1>Pizza Chooser 9000</h1>
+        <h5>Dominos LTD</h5>
+    </div>
+    <div class="card-body">
+        <h2>Select a Flavor!</h2>
+        <form method="post">
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-2" asp-for="instances.SelectedPizza"></label>
+                    <select type="" class="col-2" asp-for="instances.SelectedPizza" asp-items="Html.GetEnumSelectList<DSD601Assessment2.Operations.EnumPizzas>()">
+                        <option disabled="disabled" selected="selected">Select A Pizza</option>
+
+                    </select>
+                    <div class="col"></div>
+                </div>
+
+                <div class="row">
+                    <input class="col-4" type="submit" value="Submit" asp-action="Index" />
+                    <div class="col"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        @if (@Model.instances.OptionIsSelected)
+        {
+            <h1>@Model.instances.Pizza.Flavor</h1>
+            <img src="~/Images/@Model.instances.Pizza.ImageAddress" width="500" />
+            <br />
+            <h5>Made by @Model.instances.Pizza.Chef</h5>
+            <br />
+            <div class="col-5 border rounded border-dark p-3">
+                <p class="fw-bold">@Model.instances.Pizza.Description"</p>
+            </div>
+            <div class="col"></div>
+            <br />
+
+
+
+            <div class="container">
+                <h2 class="h2">Prices:</h2>
+                @foreach (var item in Model.instances.Pizza.Prices)
+                {
+                    <div class="row">
+                        <h5 class="col-5 border border-dark">@item</h5>
+                        <div class="col"></div>
+                    </div>
+                }
+            </div>
+            <br />
+            <div class="container">
+                <h2 class="h2">Ingredients:</h2>
+                @if (Model.instances.Pizza.IsGlutenFree)
+                {
+                    <h3 class="text-success">This Pizza is Gluten Free!</h3>
+                }
+                @if (Model.instances.Pizza.IsPescetarian)
+                {
+                    <h3 class="text-success">This Pizza is Pescetarian Friendly!</h3>
+                }
+                @foreach (var item in Model.instances.Pizza.Ingredients)
+                {
+                    <div class="row">
+                        <h4 class="col-5 border border-dark">@item</h4>
+                        <div class="col"></div>
+                    </div>
+                }
+            </div>
+
+
+
+        }
+    </div>
+</div>
