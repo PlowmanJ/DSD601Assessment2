@@ -22,9 +22,13 @@
                 "Large: $23.00"
             };
             ImageAddress = "PeriPeriChicken.png";
-            Chef = "Chef Shi-Kan Wengs";
             IsPescetarian = false;
             IsGlutenFree = false;
+            PizzaChefName();
+        }
+        public override void PizzaChefName()
+        {
+            Chef = "Chef Shi-Kan Wengs";
         }
     }
 }

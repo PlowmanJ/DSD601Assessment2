@@ -23,9 +23,14 @@
                 "Large: $21.00"
             };
             ImageAddress = "GarlicPrawn.png";
-            Chef = "Chef Jarlic Drawn";
             IsGlutenFree = true;
             IsPescetarian = true;
+            PizzaChefName();
+
         }
+            public override void PizzaChefName()
+            {
+                Chef = "Chef Jarlic Drawn";
+            }
     }
 }

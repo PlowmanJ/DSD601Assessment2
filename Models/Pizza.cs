@@ -19,6 +19,12 @@ namespace DSD601Assessment2.Models
         public List<string> Ingredients { get; set; }
         public List<string> Prices { get; set; }
 
+        //vitrual Method
+        public virtual void PizzaChefName()
+        {
+            Chef = "Chef Name Here";
+        }
+
 
     }
 }

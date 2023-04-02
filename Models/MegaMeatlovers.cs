@@ -24,9 +24,14 @@
                 "Large: $18.00"
             };
             ImageAddress = "MegaMeatlovers.png";
-            Chef = "Chef Butch";
             IsPescetarian = false;
             IsGlutenFree = true;
+            PizzaChefName();
+        }
+
+        public override void PizzaChefName()
+        {
+            Chef = "Chef Butch";
         }
     }
 }
