@@ -26,6 +26,10 @@
                     <input class="col-4" type="submit" value="Submit" asp-action="Index" />
                     <div class="col"></div>
                 </div>
+                <div class="row">
+                    <p class=" col-4 text-danger">@Model.error</p>
+                    <div class="col"></div>
+                </div>
             </div>
         </form>
     </div>
